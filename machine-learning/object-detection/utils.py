@@ -197,7 +197,10 @@ def plot_boxes(img, boxes, class_names, plot_labels, color = None):
     height = img.shape[0]
     
     # Create a figure and plot the image
-    fig, a = plt.subplots(1,1)
+    #fig, a = plt.subplots(1,1)
+    plt.clf()
+    fig = plt.figure(1)
+    a = fig.add_subplot(111)
     a.imshow(img)
     
     # Plot the bounding boxes and corresponding labels on top of the image
@@ -261,5 +264,5 @@ def plot_boxes(img, boxes, class_names, plot_labels, color = None):
             a.text(x1 + lxc, y1 - lyc, conf_tx, fontsize = 12, color = 'k',
                    bbox = dict(facecolor = rgb, edgecolor = rgb, alpha = 0.6))        
         
-    plt.savefig("output.jpg")
+    #plt.savefig("output.jpg")
     plt.show()
